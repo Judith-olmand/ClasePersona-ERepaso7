@@ -1,16 +1,16 @@
-# Introducción a la Programación Orientada a Objetos (Repaso 6)
+# Encapsulamiento y Validación de Datos (Repaso 7)
 
-Programa en Java que implementa el paradigma de Programación Orientada a Objetos (POO) mediante la creación de una clase personalizada y la gestión de sus instancias.
+Evolución del modelo de Programación Orientada a Objetos que implementa mecanismos de seguridad y validación para asegurar que los objetos mantengan un estado consistente.
 
 ## 🚀 Funcionalidades
-* **Modelado de Datos:** Define una clase `Persona` con atributos privados (`nombre`, `edad`) para representar entidades del mundo real.
-* **Encapsulamiento:** Implementa constructores parametrizados y métodos de acceso (*Getters* y *Setters*) para asegurar una gestión correcta de los datos.
-* **Comportamiento de Clase:** Incluye un método `saludar()` que define una acción específica que los objetos de tipo `Persona` pueden realizar.
-* **Entrada Segura:** El programa principal valida la entrada de la edad mediante un bucle `do-while`, garantizando que solo se creen objetos con datos numéricos válidos.
+* **Privacidad de Atributos:** Aplica el principio de ocultación de datos mediante modificadores de acceso `private`, impidiendo la manipulación externa directa.
+* **Validación de Reglas de Negocio:** El método `setEdad` incluye una restricción lógica que impide asignar valores negativos, lanzando una excepción si se intenta.
+* **Integridad en el Constructor:** El constructor delega la asignación de la edad al método `setEdad`, asegurando que incluso en el momento de la creación se cumplan las reglas de validación.
+* **Gestión de Errores Críticos:** El programa principal utiliza bloques `try-catch` para capturar tanto errores de entrada por consola como excepciones lógicas de la clase.
 
 ## 🛠️ Estructura técnica
-El código demuestra conceptos clave de la arquitectura de software en Java:
-* **Instanciación:** Uso de la palabra clave `new` para crear un objeto específico en memoria basado en la plantilla de la clase.
-* **Manejo de Constructores:** Utiliza `this` para diferenciar los atributos de la clase de los parámetros recibidos durante la creación del objeto.
-* **Captura de Excepciones:** Gestiona `InputMismatchException` para robustecer la fase de recolección de datos previa a la creación del objeto.
-* **Modulariad:** El proyecto se divide en una clase lógica (`Persona`) y una clase de ejecución (`Main`), separando la definición del comportamiento de su implementación.
+El código profundiza en la robustez del diseño de clases en Java:
+* **Lanzamiento de Excepciones (`throw new Exception`)**: Técnica utilizada para notificar que se ha producido un error lógico en la lógica de negocio.
+* **Cláusula `throws`**: Indica que un método puede delegar la responsabilidad de manejar un error a quien lo invoque.
+* **Encapsulamiento Estricto**: Uso de métodos accesores (*Getters*) y mutadores (*Setters*) para controlar cómo se lee y se escribe la información de los atributos.
+* **Seguridad de Tipos**: Combina la captura de errores de tipo (`InputMismatchException`) con errores de valor (Edad negativa).
